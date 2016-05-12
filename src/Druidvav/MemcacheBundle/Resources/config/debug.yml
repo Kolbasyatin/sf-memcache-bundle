@@ -1,0 +1,10 @@
+parameters:
+    memcache.client.class: Druidvav\MemcacheBundle\Memcache\LoggedClient
+    memcache.data_collector.class: Druidvav\MemcacheBundle\DataCollector\MemcacheDataCollector
+    memcache.data_collector.template: "DvMemcacheBundle:Collector:memcache"
+
+services:
+    memcache.data_collector:
+        class: "%memcache.data_collector.class%"
+        tags:
+            - { name: data_collector, template: "%memcache.data_collector.template%", id: "memcache" }

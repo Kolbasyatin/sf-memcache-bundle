@@ -1,0 +1,4 @@
+parameters:
+    memcache.session_handler.class: Druidvav\MemcacheBundle\Session\Storage\LockingSessionHandler
+    memcache.client.class: Clickalicious\Memcached\Client
+    memcache.cache.class: Druidvav\MemcacheBundle\Doctrine\Cache\MemcacheCache
