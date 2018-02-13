@@ -80,9 +80,6 @@ class DvMemcacheExtension extends Extension
         $definition
             ->addArgument(new Reference('memcache.' . $config['pool'] . '.client'))
             ->addArgument($options);
-        if (\PHP_VERSION_ID < 70000) {
-            $this->addClassesToCompile(array($definition->getClass()));
-        }
 
         if ($container->hasDefinition('memcache.data_collector')) {
             $definition = $container->getDefinition('memcache.data_collector');

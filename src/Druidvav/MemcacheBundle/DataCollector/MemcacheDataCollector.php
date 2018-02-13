@@ -20,6 +20,12 @@ class MemcacheDataCollector extends DataCollector
         $this->options = array();
     }
 
+    public function reset()
+    {
+        $this->pools = array();
+        $this->options = array();
+    }
+
     /**
      * Add a Memcache object to the collector
      *
