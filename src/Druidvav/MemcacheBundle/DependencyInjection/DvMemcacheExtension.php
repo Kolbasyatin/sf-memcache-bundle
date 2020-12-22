@@ -55,9 +55,11 @@ class DvMemcacheExtension extends Extension
     private function enableCache($config, ContainerBuilder $container)
     {
         foreach ($config as $cache => $cacheConfig) {
-            $definition = new Definition($container->getParameter('memcache.cache.class'));
+            $className = $container->getParameter('memcache.cache.class');
+            $definition = new Definition($className);
             $definition->addMethodCall('setMemcache', [ new Reference('memcache.' . $cacheConfig['pool'] . '.client') ]);
-            $container->setDefinition('memcache.' . $cache . '.cache', $definition);
+            $container->setDefinition($className, $definition);
+            $container->setAlias('memcache.' . $cache . '.cache', $className);
         }
     }
 
