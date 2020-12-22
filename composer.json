@@ -8,8 +8,8 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "symfony/framework-bundle": "~3.0 || ^4.4",
-    "symfony/twig-bundle":      "~3.0 || ^4.4",
+    "symfony/framework-bundle": "~3.0 || ^4.0",
+    "symfony/twig-bundle":      "~3.0 || ^4.0",
     "clickalicious/memcached.php": "~0.1",
     "doctrine/doctrine-cache-bundle": "^1.3"
   }
